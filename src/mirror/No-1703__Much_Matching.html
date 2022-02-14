@@ -1,0 +1,87 @@
+<h3>No.1703  Much Matching</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>harurun 王国には $1\sim N$ の番号が付いた $N$ 人の男性と $1\sim M$ の番号が付いた $M$ 人の女性がいます。</p>
+<p>国王のharurun君は 男女のペアをできるだけ多く作ろうとしています。</p>
+<p>以下の条件を全て満たすようにペアを作ったとき、最大で何ペアできますか？</p>
+<p>条件</p>
+<ul>
+<li><p>複数のペアに同じ人が属することはできない。</p></li>
+<li><p>$Q$ 個の要素の配列 $a,b$ が与えられる。男性 $a_i$ と女性 $b_j$ がペアを作れるのは、$i=j$ のときに限る。</p></li>
+<li><p>作った $i$ 番目のペアを $C_i=(x_i,y_i)$ としたとき、$i&lt;j$ ならば $x_i&lt;x_j$ かつ $y_i&lt;y_j$ でなければならない。</p>
+<p>( $x_i$ は男性を、 $y_i$ は女性を表す) </p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N\ M\ Q$
+$a_1\ b_1$
+$\vdots$
+$a_Q\ b_Q$
+</pre>
+<ul>
+<li><p>$1$ 行目は $N$,$M$,$Q$ が空白区切りで与えられる</p></li>
+<li><p>$2\sim Q+1$ 行目は $a_i$,$b_i$ が空白区切りで与えられる</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$1≤N,M≤10^3$</p></li>
+<li><p>$1≤Q≤N\times M$</p></li>
+<li><p>$1≤a_i≤N$</p></li>
+<li><p>$1≤b_i≤M$</p></li>
+<li><p>$i\neq j$ のとき $(a_i,b_i)\neq(a_j,b_j)$</p></li>
+<li>入力は全て整数</li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>
+        
+答えを1行に出力してください。
+        最後に改行してください。
+
+    </p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>1 1 1
+1 1</pre>
+<h6>出力</h6>
+<pre>1</pre>
+<p>1人ずつしかいないです。この王国は大丈夫でしょうか。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 3 2
+1 2
+2 3</pre>
+<h6>出力</h6>
+<pre>2</pre>
+<p>$C=((1,2),(2,3))$ です。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 3 3
+1 2
+2 3
+3 1</pre>
+<h6>出力</h6>
+<pre>2</pre>
+<p>$C=((1,2),(2,3))$ です。</p>
+<p>3つ目の条件より $C=((1,2),(2,3),(3,1))$ にできないことに注意してください。</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1703">No.1703  Much Matching</a></p>

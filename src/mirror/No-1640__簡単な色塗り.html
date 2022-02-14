@@ -1,0 +1,112 @@
+<h3>No.1640  簡単な色塗り</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p></p>
+<p>$N$ 個の白い球があり、それぞれ $1,2,...,N$ と番号付けられています。</p>
+<p>A君は $i=1,2,...,N$ について以下の操作を行います。</p>
+<ul>
+<li><p>$i$ 回目に、球$A_i$ または 球$B_i$ のどちらか一方を黒で塗る。</p></li>
+</ul>
+<p>$N$ 回の操作で球を全て黒で塗ることが可能かどうかを判定してください。</p>
+<p>全ての球を黒に塗ることが可能ならば、各回でどちらを選ぶべきかも求めてください。</p>
+<p>選び方が複数ある場合は、どの選び方を出力してもかまいません。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$1≤N≤10^5$</p></li>
+<li><p>$1≤A_i,B_i≤N$</p></li>
+<li><p>入力は全て整数である。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N$
+$A_1$ $B_1$
+$\vdots$
+$A_N$ $B_N$
+</pre>
+<ul>
+<li><p>$1$ 行目には $N$ が与えられる。</p></li>
+<li><p>$i+1$ 行目 $(1≤i≤N)$ には、$A_i$ と $B_i$ が空白区切りで与えられる。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<ul>
+<li>
+<p>全て黒く塗ることが出来ない場合は　<code>No</code> と $1$ 行に出力してください。</p>
+</li>
+<li>
+<p>全て黒く塗ることが出来る場合は　以下の通りに出力してください。</p>
+<ul>
+<li><p>$1$ 行目には <code>Yes</code> と出力してください。</p></li>
+<li><p>$i+1$ 行目$(1≤i≤N)$には $A_i$ と $B_i$ のうち選んだ方を出力してください。</p></li>
+</ul>
+</li>
+</ul>
+<p>最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>4
+1 2
+3 4
+4 3
+2 1
+</pre>
+<h6>出力</h6>
+<pre>Yes
+1
+3
+4
+2
+</pre>
+<p>この選び方以外には、$(2,4,3,1)$ などもあります。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3
+1 2
+1 2
+1 2
+</pre>
+<h6>出力</h6>
+<pre>No</pre>
+<p>どう選んでも、球 $3$ を塗ることはできません。
+                
+            </p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>5
+1 2
+4 3
+3 1
+5 4
+2 1
+</pre>
+<h6>出力</h6>
+<pre>Yes
+1
+4
+3
+5
+2
+</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1640">No.1640  簡単な色塗り</a></p>

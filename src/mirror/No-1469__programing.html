@@ -1,0 +1,79 @@
+<h3>No.1469  programing</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>harurun は英語が苦手で、 programming を programing と書いてしまいます。</p>
+<p>このように、 $2$ つの連続する同じ文字を $1$ つの文字にしてしまう書き方を $harurun$ 記法と呼ぶことにします。</p>
+<p>文字列 $S$ が $1$ つ与えられるので、 $harurun$ 記法で出力してください。</p>
+<p>ただし、 $3$ つ以上同じ文字が連続する文字列が与えられることはありません。</p>
+<br>
+<p>厳密な問題文は以下の通りです。</p>
+<p>文字列 $S$ が与えられます。</p>
+<p>以下の操作を、可能な限り行ったあとの文字列 $S$ を出力してください。</p>
+<ul>
+<li><p>隣り合う $2$ 文字が同じとき、片方を削除する。</p></li>
+</ul>
+<p>ただし、 abbb のような、$3$ つ以上同じ文字が連続する文字列は与えられません。</p>
+<br>
+<p>(Python3,PyPy3,C,C++17(1z),Java15,Javascript,RustでのACを確認していますが、Bashなどの低速な言語ではACできない可能性があります。)</p>
+</br></br></div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$S$
+</pre>
+<p></p>
+<p>$1$ 行目に文字列 $S$ が与えられる。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$S_i (1≤i≤|S|)$ は英小文字である。</p></li>
+<li><p>$1≤|S|≤5\times10^6$</p></li>
+<li><p>$S_i$ と $S_{i+1}$ が同じ文字のとき、$S_{i+1}$ と $S_{i+2}$ は異なる文字である。$(1≤i&lt;|S|-1)$ </p></li>
+<p>($S_{i}$ は $S$ の $i$ 文字目を表す。また、 $|S|$ は $S$ の長さを表す。)</p>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>答えを一行に出力してください。</p>
+<p>最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>programming</pre>
+<h6>出力</h6>
+<pre>programing</pre>
+<p>連続する m を1つ削除するだけです。 
+                
+            </p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>aabbccb</pre>
+<h6>出力</h6>
+<pre>abcb</pre>
+<p>実在しない英単語が与えられることもあります。
+                
+            </p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>abcdefghijklmnopqrstuvwxyz</pre>
+<h6>出力</h6>
+<pre>abcdefghijklmnopqrstuvwxyz</pre>
+<p>何も削除しないこともあります。
+                
+            </p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1469">No.1469  programing</a></p>

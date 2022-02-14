@@ -1,0 +1,61 @@
+<h3>No.1706  Many Bus Stops (hard)</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>$C$ 個のバス停があり、それぞれバス停 $1$ 、バス停 $2$ 、....、バス停 $C$ と呼ぶことにします,</p>
+<p>時刻 $0$ にバス停 $1$ にバスが $M$ 台止まっていて、バス停 $1$ 以外にはバスがいません。</p>
+<p>時刻 $i=0,1,2,...,N-1$ に各バス停にいるすべてのバスはそれぞれ以下のように<b>独立</b>に動きます。</p>
+<ul>
+<li><p>バス停 $x$ にバスがいる場合</p></li>
+<ul>
+<li><p>バス停 $x$ 以外のバス停に、<b>それぞれ</b>確率 $\frac{1}{C}$ で時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{C}$ でバス停 $x$ にとどまる</p></li>
+</ul>
+</ul>
+<p>時刻 $N$ にバス停 $1$ にバスが1台以上いる確率を $\mod 10^9+7$ で出力してください。</p>
+<br>
+<details>
+<summary><p>確率を $\mod 10^9+7$ で出力するとは (クリックで開きます)</p></summary>
+<p>確率を既約分数 $\frac{P}{Q}$ で表したとき、 $R\times Q=P (mod 10^9+7)$ を満たし、かつ $0≤R&lt;10^9+7$ を満たす 非負整数 $R$ を出力してください。</p>
+</details>
+</br></div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$C\ N\ M$</pre>
+<p>バス停の数 $C$ と整数 $N$ とバスの数 $M$ が空白区切りで与えられる。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$2≤C≤1\times10^5$</p></li>
+<li><p>$1≤N≤1\times10^9$</p></li>
+<li><p>$1≤M≤1\times10^9$</p></li>
+<li><p>入力は全て整数である</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 3 1
+</pre>
+<h6>出力</h6>
+<pre>370370373
+</pre>
+</div>
+<p>答えの確率は $\frac{1}{27}$ です。 $\mod 10^9+7$ で出力してください。</p>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>10 1 2
+</pre>
+<h6>出力</h6>
+<pre>830000006
+</pre>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1706">No.1706  Many Bus Stops (hard)</a></p>

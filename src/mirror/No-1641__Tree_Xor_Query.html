@@ -1,0 +1,119 @@
+<h3>No.1641  Tree Xor Query</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>$1\sim N$ の番号が付いた $N$ 頂点の木が与えられます。</p><p>この木の根は頂点 $1$ です。</p>
+<p>各頂点にはコストがあり、頂点 $i$ のコストは $C_i$ です。 $(1≤i≤N)$</p>
+<p>また、$i$ 番目の辺 $(1 \leq i \leq N-1)$ は 頂点 $a_i$ と頂点 $b_i$ を結びます。</p>
+<p>以下のクエリが $Q$ 回与えられるので、処理してください。</p>
+<ul>
+<li><p>$j$ 回目のクエリ $(1≤j≤Q)$ では以下の操作を行う。</p></li>
+<ul>
+<li><p>$T_j=1$ のとき</p></li>
+<p>
+            $C_{x_j}$ を $C_{x_j} \oplus y_j$ で置き換える。
+            </p>
+<li><p>$T_j=2$ のとき</p></li>
+<p>頂点 $x_j$ を根とする部分木の全ての頂点のコストの xor を出力する。</p>
+</ul>
+</ul>
+<p>ただし、 $a\oplus b$ はビット単位の xor を表します。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$2 \leq N \leq 10^5$</p></li>
+<li><p>$1 \leq Q \leq 10^5$</p></li>
+<li><p>$0 \leq C_i&lt;2^{10}$ $(1 \leq i \leq N)$</p></li>
+<li><p>$1 \leq a_i,b_i \leq N$ $(1 \leq i \leq N-1)$</p></li>
+<li><p>$T_j$ は $1$ または $2$ である。 $(1 \leq j \leq Q)$</p></li>
+<li><p>$1 \leq x_j \leq N$ $(1 \leq j \leq Q)$</p></li>
+<li><p>$T_j=1$ のとき、 $0 \leq y_j &lt; 2^{10}$ $(1 \leq j \leq Q)$</p></li>
+<li><p>$T_j=2$ のとき、 $y_j=0$ $(1≤j≤Q)$</p></li>
+<li><p>クエリに $T_j=2$ $(1 \leq j \leq Q)$ は少なくとも $1$ つは含まれる。</p></li>
+<li><p>入力は全て整数である。</p></li>
+<li><p>与えられるグラフは木である。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N$ $Q$
+$C_1$ $C_2$ $\dots$ $C_N$
+$a_1$ $b_1$
+$a_2$ $b_2$
+$\vdots$
+$a_{N-1}$ $b_{N-1}$
+$T_1$ $x_1$ $y_1$
+$T_2$ $x_2$ $y_2$
+$\vdots$
+$T_Q$ $x_Q$ $y_Q$
+</pre>
+<ul>
+<li><p>$1$ 行目には、 $N$ と $Q$ が空白区切りで与えられる。</p></li>
+<li><p>$2$ 行目には、各頂点のコスト $C_1, C_2, \dots, C_N$ が空白区切りで与えられる。</p></li>
+<li><p>$3$ 行目から $N+1$ 行目には、 $a_i$ と $b_i$ が空白区切りで与えられる。 $(1 \leq i \leq N-1)$</p></li>
+<li><p>$N+2$ 行目から $N+Q+1$ 行目には、 $T_j,~x_j,~y_j$ が空白区切りで与えられる。 $(1 \leq j \leq Q)$</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>$T_j=2~(1 \leq j \leq Q)$ であるような各クエリについて $1$ 行ずつ出力してください。</p>
+<p>最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 3
+1 2 3
+1 2
+1 3
+1 2 3
+1 3 4
+2 1 0
+</pre>
+<h6>出力</h6>
+<pre>7</pre>
+<p>$1$ 回目のクエリで、 $C_2$ を $C_2\oplus y_1 = 2\oplus 3 = 1$ で置き換えます。</p>
+<p>$2$ 回目のクエリで、 $C_3$ を $C_3\oplus y_2 = 3\oplus 4 = 7$ で置き換えます。</p>
+<p>$3$ 回目のクエリで、 頂点 $1$ を根とする部分木のコストの総 xor $C_1\oplus C_2 \oplus C_3=1\oplus 1\oplus 7 =7 $ となるので、 $7$ を出力します。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>6 3
+1 2 3 4 5 6
+1 2
+1 3
+2 4
+2 6
+4 5
+1 6 6
+1 4 4
+2 2 0</pre>
+<h6>出力</h6>
+<pre>7</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>2 1
+1 2
+1 2
+2 2 0
+</pre>
+<h6>出力</h6>
+<pre>2</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1641">No.1641  Tree Xor Query</a></p>

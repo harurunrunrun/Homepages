@@ -1,0 +1,100 @@
+<h3>No.1416  ショッピングモール</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>
+    イギリス人のオリバー君は、ショッピングモールを建てる計画をしています。
+</p>
+<p>
+    このショッピングモールの $k\ (k \geq 0)$ 階には、最大で $2^k$ 軒の店が入ることのできるスペースがあります。
+</p>
+<p>
+    さて、これからこのショッピングモールに $n$ 軒の店が入る予定で、$i\ (1 \leq i \leq n)$ 番目の店には $A_i$ 人の店員がやってきます。
+</p>
+<p>
+    ここで、それぞれの店の <b>コスト</b> を以下のように定義します。
+</p>
+<p>
+</p><ul>
+<li>$i$ 番目の店が $F_i\ (F_i \geq 0)$ 階にあるとしたとき、その <b>コスト</b> $C_i$ は $A_i \times F_i$</li>
+</ul>
+<p></p>
+<p>
+    オリバー君は、すべての店の <b>コスト</b> の合計 $\displaystyle \sum_{i=1}^{n} C_i$ が最小となるように店を配置します。
+</p>
+    この <b>コスト</b> の合計の最小値を求めてください。
+<p></p>
+<p>
+<b>階の数え方が $1$ 階から始まっていないことに注意してください。</b>
+</p>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$n$
+$A_1\ A_2\ \ldots \ A_n$
+</pre>
+<p>    
+    1 行目には店の数 $n$ が与えられる。
+</p>
+<p>
+    2 行目には $A_1,\ A_2,\ \cdots ,\ A_n$ が空白区切りで与えられる。
+</p>
+<h5 class="underline">制約</h5>
+<p>
+</p><ul>
+<li>入力はすべて整数</li>
+<li>$1 \leq n \leq 5 \times 10^4$</li>
+<li>$1 \leq A_i \leq 10^3$</li>
+</ul>
+<p></p>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>  
+コストの合計の最小値を出力してください。<br>
+最後に改行してください。    </br></p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>
+3
+1 2 3
+</pre>
+<h6>出力</h6>
+<pre>
+3</pre>
+<p>
+$0$ 階に $3$ 人の店を配置し、 $1$ 階に $1$ 人の店と $2$ 人の店を配置すればよいです。<br>
+よって、求める値は $(3 \times 0) + (1 \times 1) + (2 \times 1) = 3$ となります。</br></p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>1
+1</pre>
+<h6>出力</h6>
+<pre>0</pre>
+<p> <br>
+</br></p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>15
+1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000 1000</pre>
+<h6>出力</h6>
+<pre>34000
+</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1416">No.1416  ショッピングモール</a></p>

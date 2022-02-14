@@ -1,0 +1,74 @@
+<h3>No.1704  Many Bus Stops (easy)</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>A,B,Cの $3$ つのバス停があります。</p>
+<p>時刻 $0$ にバス停Aにバスが $1$ 台止まっていて、バス停A以外にはバスがいません。</p>
+<p>時刻 $i=0,1,2,...,N-1$ に各バス停にいるバスはそれぞれ以下のように動きます。</p>
+<ul>
+<li><p>バス停Aにバスがいる場合</p></li>
+<ul>
+<li><p>確率 $\frac{1}{3}$ でバス停Bに時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Cに 時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Aにとどまる</p></li>
+</ul>
+<li><p>バス停Bにバスがいる場合</p></li>
+<ul>
+<li><p>確率 $\frac{1}{3}$ でバス停Cに時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Aに時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Bにとどまる</p></li>
+</ul>
+<li><p>バス停Cにバスがいる場合</p></li>
+<ul>
+<li><p>確率 $\frac{1}{3}$ でバス停Aに時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Bに時間 $1.5$ かけて移動する</p></li>
+<li><p>確率 $\frac{1}{3}$ でバス停Cにとどまる</p></li>
+</ul>
+</ul>
+<p>時刻 $N$ にバス停Aにバスが1台以上いる確率を $\mod 10^9+7$ で出力してください。</p>
+<p>$T$ 個のテストケースに答えてください。</p>
+<br>
+<details>
+<summary><p>確率を $\mod 10^9+7$ で出力するとは (クリックで開きます)</p></summary>
+<p>確率を既約分数 $\frac{P}{Q}$ で表したとき、 $R\times Q=P (mod 10^9+7)$ を満たし、かつ $0≤R&lt;10^9+7$ を満たす 非負整数 $R$ を出力してください。</p>
+</details>
+</br></div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$T$</pre>
+<p>1行目にはテストケースの数 $T$ が与えられる。</p>
+<p>各テストケースは以下のようになっており、$T$ 行与えられる。</p>
+<pre>$N$</pre>
+<p>整数 $N$ が与えられる。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$1≤T≤3\times10^3$</p></li>
+<li><p>$1≤N≤1\times10^9$</p></li>
+<li><p>入力は全て整数である</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>5
+3
+5
+10
+100
+1000000000
+</pre>
+<h6>出力</h6>
+<pre>370370373
+930041159
+79120731
+511323553
+802083332</pre>
+</div>
+<p>テストケース $1$ について、 答えの確率は $\frac{1}{27}$ です。 $\mod 10^9+7$ の $370370373$ を出力してください。</p>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1704">No.1704  Many Bus Stops (easy)</a></p>

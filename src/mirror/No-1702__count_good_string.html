@@ -1,0 +1,78 @@
+<h3>No.1702  count good string</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>英小文字と <code>?</code> からなる長さ $N$ の文字列 $S$ が与えられます。</p>
+<p>$S$ の空でない部分列は $2^{N}-1$ 個ありますが、その部分列のうち以下のいずれかの条件を満たすものを良い部分列と定義します。</p>
+<p>条件</p>
+<ul>
+<li><p>部分列に <code>?</code> が含まれない</p></li>
+<li><p>部分列に <code>?</code> が1つだけ含まれる</p></li>
+</ul>
+<p>ここで、文字列 <code>yukicoder</code> のうち1文字以下を選び <code>?</code> に置き換えた文字列の集合を $T$ とします。</p>
+<p>良い部分列のうち $T$ に含まれる部分列の個数を $10^9+7$ で割った余りを求めてください。
+</p></div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N$
+$S$
+</pre>
+<ul>
+<li><p>1行目に整数 $N$ が与えられる</p></li>
+<li><p>2行目に文字列 $S$ が与えられる</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$1≤N≤10^5$</p></li>
+<li><p>$N$ は整数である</p></li>
+<li><p>$|S|=N$</p></li>
+<li><p>$S$ は英小文字または <code>?</code> からなる</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>答えを1行に出力してください。</p>
+<p>最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>9
+yukicoder</pre>
+<h6>出力</h6>
+<pre>1</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>7
+harurun</pre>
+<h6>出力</h6>
+<pre>0</pre>
+<p>
+</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>14
+yukiyuki?coder
+</pre>
+<h6>出力</h6>
+<pre>14</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1702">No.1702  count good string</a></p>

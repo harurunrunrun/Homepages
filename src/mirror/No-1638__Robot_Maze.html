@@ -1,0 +1,116 @@
+<h3>No.1638  Robot Maze</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>縦 $H$ 行、横 $W$ 列のグリッドがあります。上から $i$ 行目、左から $j$ 列目のマスを $(i,j)$ と表します。</p>
+<p>各マス $(i,j)$ $(1≤i≤H,1≤j≤W)$ についての情報が $C_{i,j}$ で与えられます。</p>
+<p>$C_{i,j}$ が<code>.</code>ならばマス $(i,j)$ は空マスであり、 $C_{i,j}$ が <code>#</code>ならばマス $(i,j)$ は固い壁マスであり、$C_{i,j}$ が <code>@</code>ならばマス $(i,j)$ は脆い壁マスです。</p>
+<p>ロボットのT君は上下左右に隣り合うマスへの移動を繰り返し、マス $(x_s,y_s)$ から出発しマス $(x_t,y_t)$ に辿り着こうとしています。</p>
+<p>T君は出発前に、ある非負整数 $x$ を選んでコスト $P\times x$ で脆い壁を $x$ 個破壊し、空マスにすることができます。 </p>
+<p>出発後T君がマス　$(i,j)$ にいるとき、以下の移動ができます。</p>
+<ul>
+<li>マス $(i-1,j)$ が空マスであるならば、マス $(i-1,j)$ にコスト $U$ で移動できる。<p></p></li>
+<li>マス $(i+1,j)$ が空マスであるならば、マス $(i+1,j)$ にコスト $D$ で移動できる。<p></p></li>
+<li>マス $(i,j+1)$ が空マスであるならば、マス $(i,j+1)$ にコスト $R$ で移動できる。<p></p></li>
+<li>マス $(i,j-1)$ が空マスであるならば、マス $(i,j-1)$ にコスト $L$ で移動できる。<p></p></li>
+</ul>
+<p>T君がマス $(x_t,y_t)$ にコスト $K$ 以下で辿り着くことは可能でしょうか？</p>
+<p>可能ならば<code>Yes</code>、不可能ならば<code>No</code>と出力してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$2≤H,W≤100$</p></li>
+<li><p>$0≤U,D,R,L≤100$</p></li>
+<li><p>$0≤K≤10^{13}$</p></li>
+<li><p>$0≤P≤10^{9}$</p></li>
+<li><p>$C_{i,j}$ は<code>.</code>または<code>#</code>または<code>@</code>である。</p></li>
+<li><p>$1≤x_s,x_t≤H$</p></li>
+<li><p>$1≤y_s,y_t≤W$</p></li>
+<li><p>$(x_s,y_s)\neq (x_t,y_t)$</p></li>
+<li><p>$(x_s,y_s)$,$(x_t,y_t)$ は空マスである。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$H\ W$
+$U\ D\ R\ L\ K\ P$
+$x_s\ y_s\ x_t\ y_t$
+$C_{1,1}...C_{1,W}$
+$\vdots$
+$C_{H,1}...C_{H,W}$
+</pre>
+<ul>
+<li><p>$1$ 行目には $H,W$ が空白区切りで与えれる。</p></li>
+<li><p>$2$ 行目には $U,D,R,L,K,P$ が空白区切りで与えれる。</p></li>
+<li><p>$3$ 行目には $x_s,y_s,x_t,y_t$ が空白区切りで与えられる。</p></li>
+<li><p>$4$ 行目から $H+3$ 行目には $C_{i,1}...C_{i,W}$ が与えれる。$(1≤i≤H)$</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>答えを $1$ 行に出力してください。
+        
+
+        最後に改行してください。
+
+    </p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 3
+1 1 1 1 8 16
+1 1 3 1 
+..@
+##@
+..@
+</pre>
+<h6>出力</h6>
+<pre>No</pre>
+<p>コスト $54$ かかるので <code>No</code> を出力してください。
+
+                
+
+
+            </p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>2 2
+0 0 0 0 1 1
+1 1 2 2
+.@
+#.
+</pre>
+<h6>出力</h6>
+<pre>Yes</pre>
+<p>コスト $1$ で辿り着けます。
+                
+            </p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_03.txt">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>2 2
+100 100 100 100 100 104060401
+1 1 2 2
+.#
+#.
+</pre>
+<h6>出力</h6>
+<pre>No</pre>
+<p>辿り着けない場合も<code>No</code>と出力してください。
+                
+            </p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1638">No.1638  Robot Maze</a></p>

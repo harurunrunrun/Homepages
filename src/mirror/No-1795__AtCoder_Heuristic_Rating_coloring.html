@@ -1,0 +1,294 @@
+<h3>No.1795  AtCoder Heuristic Rating coloring</h3>
+<div class="block">
+<h4 class="shadow">ストーリー</h4>
+<p>AtCoder Heuristic Rating coloringはAtCoder Heuristic Contestの順位表のユーザー名をヒューリスティックのレーティングで色付けするユーザースクリプトです。</p>
+<p>このスクリプトはAtCoder Heuristic Contestが終わる毎に更新スクリプトを用いてレーティングが更新されます。</p>
+<p>今日のContestが終わりレーティングを更新しようとしましたが、harurun君は誤って更新スクリプトを削除してしまい困っています。</p>
+<p>あなたが更新スクリプトを作って、harurun君を助けてあげてください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>AtCoder Heuristic Contestには 昨日までに $N$ 人が参加しています。</p>
+<p>今日、新たにAtCoder Heuristic Contestが行われ、$M$ 人が参加しました。</p>
+<p>コンテスト前の $N$ 人のユーザー名 $S_i$ と レーティング $A_i$ $(1≤i≤N)$ 、今回のコンテストの $M$ 人のユーザー名 $T_j$ とレーティング $B_j$ $(1≤j≤M)$ が与えられるので、1回以上コンテストに出たユーザーの今のレーティングを求めてください。</p>
+<p>各ユーザーの今のレーティングは以下のように決定されます。</p>
+<ul>
+<li><p>ユーザーが今回のコンテストに出ている場合、今回のコンテストのレーティングになる。</p></li>
+<li><p>ユーザーが今回のコンテストに出ていない場合、コンテスト前のレーティングになる。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N\ M$
+$S_1\ A_1$
+$\vdots$
+$S_N\ A_N$
+$T_1\ B_1$
+$\vdots$
+$T_M\ B_M$
+</pre>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$0≤N≤5\times 10^4$</p></li>
+<li><p>$1≤M≤5\times 10^4$</p></li>
+<li><p>$2≤|S_i|,|T_i|≤16$</p></li>
+<li><p>$1≤A_i≤9999 (1≤i≤N)$</p></li>
+<li><p>$1≤B_i≤9999 (1≤i≤M)$</p></li>
+<li><p>$N,M,A_i,B_i$ は全て整数である。</p></li>
+<li><p>$S_i,T_i$ は英小文字、英大文字、数字、<code>_</code>からなる(大文字小文字は区別される)。</p></li>
+<li><p>$S_i\neq S_j (i\neq j)$</p></li>
+<li><p>$T_i\neq T_j (i\neq j)$</p></li>
+<li><p>$S_i=T_j$ のとき $A_i≤B_j$</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>今日までに参加したユーザーの数を $k$ としたとき $k$ 行、<font color="red" size="15">ユーザー名の辞書順</font>で以下のように出力してください。</p>
+<p>各行ではユーザ名とレーティングの空白区切りで出力してください。(詳しくはサンプルをご覧ください。)</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>2 2
+user 30  
+harurun 10
+harurun 100
+user 9999
+</pre>
+<h6>出力</h6>
+<pre>harurun 100
+user 9999</pre>
+<p>ユーザー名の辞書順で出力してください。</p>
+</div>
+</div>
+<div class="sample">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>0 1
+harurun 50</pre>
+<h6>出力</h6>
+<pre>
+harurun 50</pre>
+<p>昨日までの参加者がいないこともあります。</p>
+</div>
+</div>
+<div class="sample">
+<h5 class="underline">サンプル3</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>1 1
+harurun 2000
+Harurun 2000
+</pre>
+<h6>出力</h6>
+<pre>
+Harurun 2000
+harurun 2000</pre>
+<p>大文字小文字は区別されます。</p>
+</div>
+</div>
+<div class="sample">
+<h5 class="underline">サンプル4</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>63 63
+pp 10
+nn 20
+dd 30
+WW 40
+00 50
+22 60
+77 70
+vv 80
+ll 90
+FF 100
+55 110
+ii 120
+II 130
+kk 140
+GG 150
+NN 160
+aa 170
+rr 180
+PP 190
+zz 200
+HH 210
+66 220
+DD 230
+ee 240
+SS 250
+EE 260
+jj 270
+KK 280
+TT 290
+bb 300
+44 310
+RR 320
+33 330
+YY 340
+11 350
+oo 360
+BB 370
+hh 380
+QQ 390
+UU 400
+mm 410
+__ 420
+MM 430
+CC 440
+ww 450
+gg 460
+88 470
+OO 480
+qq 490
+LL 500
+XX 510
+JJ 520
+AA 530
+ff 540
+VV 550
+xx 560
+ZZ 570
+tt 580
+yy 590
+99 600
+cc 610
+uu 620
+ss 630
+QQ 390
+CC 440
+88 470
+__ 420
+WW 40
+jj 270
+33 330
+RR 320
+ff 540
+kk 140
+mm 410
+KK 280
+ii 120
+TT 290
+ee 240
+00 50
+55 110
+AA 530
+xx 560
+XX 510
+SS 250
+11 350
+66 220
+vv 80
+NN 160
+gg 460
+oo 360
+UU 400
+rr 180
+tt 580
+MM 430
+yy 590
+dd 30
+DD 230
+YY 340
+cc 610
+22 60
+JJ 520
+zz 200
+ll 90
+uu 620
+99 600
+hh 380
+VV 550
+PP 190
+HH 210
+nn 20
+pp 10
+44 310
+qq 490
+ss 630
+GG 150
+ZZ 570
+aa 170
+ww 450
+bb 300
+FF 100
+BB 370
+EE 260
+LL 500
+II 130
+OO 480
+77 70</pre>
+<h6>出力</h6>
+<pre>00 50
+11 350
+22 60
+33 330
+44 310
+55 110
+66 220
+77 70
+88 470
+99 600
+AA 530
+BB 370
+CC 440
+DD 230
+EE 260
+FF 100
+GG 150
+HH 210
+II 130
+JJ 520
+KK 280
+LL 500
+MM 430
+NN 160
+OO 480
+PP 190
+QQ 390
+RR 320
+SS 250
+TT 290
+UU 400
+VV 550
+WW 40
+XX 510
+YY 340
+ZZ 570
+__ 420
+aa 170
+bb 300
+cc 610
+dd 30
+ee 240
+ff 540
+gg 460
+hh 380
+ii 120
+jj 270
+kk 140
+ll 90
+mm 410
+nn 20
+oo 360
+pp 10
+qq 490
+rr 180
+ss 630
+tt 580
+uu 620
+vv 80
+ww 450
+xx 560
+yy 590
+zz 200</pre>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1795">No.1795  AtCoder Heuristic Rating coloring</a></p>

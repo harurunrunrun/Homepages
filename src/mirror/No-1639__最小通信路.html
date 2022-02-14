@@ -1,0 +1,84 @@
+<h3>No.1639  最小通信路</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p>$N$ 個の電波塔があり、各電波塔はそれぞれ $1\sim N$ の番号が付いています。</p>
+<p>各電波塔は、ある正整数 $r$ を半径とした円内(円周も含む)に電波を飛ばすことが出来ます。</p>
+<p>あなたは各電波塔間に好きな数、双方向の通信路を建設することができます。</p>
+<p>電波塔 $a_i$ と $b_i$ の間に通信路を建設する場合、$a_i$$b_i$ 間の距離 $C_i$ と等しいコストがかかります。$(1≤i≤N(N-1)/2)$</p>
+<p>電波塔 $x$ と電波塔 $y$ は以下の条件のどちらかを満たすとき双方向に通信することができます。</p>
+<ul>
+<li><p>$x$$y$ 間に通信路が建設されていて、 $x$$y$ 間の距離が $r$ 以下である。</p></li>
+<li><p>$x,y$ を含まない $k\ (&gt;0)$ 個の電波塔 $(t_1,t_2,...,t_k)$ を選ぶ。
+        このとき、$x$$t_1$ 間、$t_1$$t_2$ 間、...、$t_k$$y$ 間の全てに通信路が建設されていて、
+        $x$$t_1$ 間、$t_1$$t_2$ 間、...、$t_k$$y$ 間のそれぞれの距離が全て $r$ 以下である。</p></li>
+</ul>
+<p>あなたの目標は、任意の電波塔間の通信を可能にすることです。</p>
+<p>かかるコストの総和が最小になるように通信路を建設したときの、正整数 $r$ の最小値を求めてください。</p>
+<p>ただし、コストの総和が最小になる建設の仕方が複数ある場合は、それぞれの建設の仕方の正整数 $r$ の最小値を求め、その中での最小値を求めてください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$2≤N≤10^2$</p></li>
+<li><p>$a_i\neq b_i$</p></li>
+<li><p>任意の異なる $i,j$ について $\{a_i,b_i\}\neq \{a_j,b_j\}$</p></li>
+<li><p>$1≤a_i,b_i≤N$</p></li>
+<li><p>$\boldsymbol{\textcolor{red}{1≤C_1&lt;C_2&lt;...&lt;C_{N(N-1)/2}≤10^{100}}}$</p></li>
+<li><p>入力は全て整数</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N$
+$a_1\quad b_1\quad C_1$
+$a_2\quad b_2\quad C_2$
+$\vdots$
+$a_{N(N-1)/2}\quad b_{N(N-1)/2}\quad C_{N(N-1)/2}$
+</pre>
+<ul>
+<li><p>$1$ 行目には 電波塔の数が与えられる。</p></li>
+<li><p>$2$ から $N(N-1)/2+1$ 行目には、$a_i,b_i,C_i$ が空白区切りで与えられ、電波塔 $a_i$ と電波塔 $b_i$ の距離が $C_i$ であることを表す。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>答えを１行に出力してください。最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>2
+1 2 1
+</pre>
+<h6>出力</h6>
+<pre>1</pre>
+<p>電波塔 $1$ と電波塔 $2$ の距離は $1$ であり、条件を満たすこれ以上小さな正整数はないので、$1$ を出力します。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>5
+1 2 2
+1 3 3
+2 4 4
+3 5 5
+1 4 6
+1 5 7
+2 3 8
+2 5 9
+3 4 10
+4 5 11
+</pre>
+<h6>出力</h6>
+<pre>5</pre>
+<p>
+</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1639">No.1639  最小通信路</a></p>

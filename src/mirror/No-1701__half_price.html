@@ -1,0 +1,67 @@
+<h3>No.1701  half price</h3>
+<div class="block">
+<h4 class="shadow">問題文</h4>
+<p></p>
+<p>あなたはショッピングモールにあるEVENという店で買い物をします。</p>
+<p>名前の通り、その店のすべての商品の値段は $2$ で割り切れます。</p>
+<p>その店には $N$ 個の<b>異なる</b>商品があり、各商品の値段は $a_i (1≤i≤N)$ 円です。</p>
+<p>あなたは好きな数(0でもよい)の商品の値段を<b>一度だけ</b>半額にできます。</p>
+<p>これらの商品から $1$ つ以上の適当な数の商品を選んだ時、値段の合計が $W$ 円になる商品の選び方は何通りあるでしょうか。</p>
+</div>
+<div class="block">
+<h4 class="shadow">入力</h4>
+<pre>$N\ W$
+$a_1 \ldots a_N$
+</pre>
+<ul>
+<li><p>1行目に、 $N$ と $W$ が空白区切りで与えられる。</p></li>
+<li><p>2行目に、 $a_1 \ldots a_N$ が空白区切りで与えられる。</p></li>
+</ul>
+</div>
+<div class="block">
+<h4 class="shadow">制約</h4>
+<ul>
+<li><p>$1≤N≤13$</p></li>
+<li><p>$0≤W≤10^9$</p></li>
+<li><p>$0≤a_i≤10^9$</p></li>
+<li><p>$a_i$ は $2$ で割り切れる</p></li>
+<li><p>入力は全て整数である</p></li>
+</ul></div>
+<div class="block">
+<h4 class="shadow">出力</h4>
+<p>答えを出力してください。</p>
+<p>最後に改行してください。</p>
+</div>
+<div class="block">
+<h4 class="shadow">サンプル</h4>
+<div class="sample" data-file="01_sample_01.txt">
+<h5 class="underline">サンプル1</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>3 20
+40 10 20
+</pre>
+<h6>出力</h6>
+<pre>3</pre>
+<p>条件を満たすのは、</p>
+<ul>
+<li>$\displaystyle \frac{a_1}{2}=20$</li>
+<li>$a_2+\displaystyle \frac{a_3}{2}=20$</li>
+<li>$a_3=20$</li>
+</ul>
+<p>より、商品の選び方は $\{a_1\},\{a_2,a_3\},\{a_3\}$ の $3$ 通りです。</p>
+</div>
+</div>
+<div class="sample" data-file="01_sample_02.txt">
+<h5 class="underline">サンプル2</h5>
+<div class="paragraph">
+<h6>入力</h6>
+<pre>5 3
+2 2 2 2 2</pre>
+<h6>出力</h6>
+<pre>20</pre>
+<p>$\frac{a_1}{2}+a_2=3$ , $a_1+\frac{a_2}{2}=3$ ですが、商品の選び方はどちらも $\{a_1,a_2\}$ なので合わせて 1通りであることに注意してください。</p>
+</div>
+</div>
+</div>
+<p>source: <a href="https://yukicoder.me/problems/no/1701">No.1701  half price</a></p>
