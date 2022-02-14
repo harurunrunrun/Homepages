@@ -1,3 +1,6 @@
+<script>
+MathJax={chtml:{matchFontHeight: false},tex:{inlineMath: [['$', '$']]}};</script>
+<script id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <h3>No.1641  Tree Xor Query</h3>
 <div class="block">
 <h4 class="shadow">問題文</h4>
@@ -36,17 +39,17 @@
 </div>
 <div class="block">
 <h4 class="shadow">入力</h4>
-<pre>$N$ $Q$
-$C_1$ $C_2$ $\dots$ $C_N$
-$a_1$ $b_1$
-$a_2$ $b_2$
-$\vdots$
-$a_{N-1}$ $b_{N-1}$
-$T_1$ $x_1$ $y_1$
-$T_2$ $x_2$ $y_2$
-$\vdots$
-$T_Q$ $x_Q$ $y_Q$
-</pre>
+<p>$N$ $Q$</p>
+<p>$C_1$ $C_2$ $\dots$ $C_N$</p>
+<p>$a_1$ $b_1$</p>
+<p>$a_2$ $b_2$</p>
+<p>$\vdots$</p>
+<p>$a_{N-1}$ $b_{N-1}$</p>
+<p>$T_1$ $x_1$ $y_1$</p>
+<p>$T_2$ $x_2$ $y_2$</p>
+<p>$\vdots$</p>
+<p>$T_Q$ $x_Q$ $y_Q$</p>
+<p></p>
 <ul>
 <li><p>$1$ 行目には、 $N$ と $Q$ が空白区切りで与えられる。</p></li>
 <li><p>$2$ 行目には、各頂点のコスト $C_1, C_2, \dots, C_N$ が空白区切りで与えられる。</p></li>
@@ -65,16 +68,16 @@ $T_Q$ $x_Q$ $y_Q$
 <h5 class="underline">サンプル1</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>3 3
-1 2 3
-1 2
-1 3
-1 2 3
-1 3 4
-2 1 0
-</pre>
+<p>3 3</p>
+<p>1 2 3</p>
+<p>1 2</p>
+<p>1 3</p>
+<p>1 2 3</p>
+<p>1 3 4</p>
+<p>2 1 0</p>
+<p></p>
 <h6>出力</h6>
-<pre>7</pre>
+<p>7</p>
 <p>$1$ 回目のクエリで、 $C_2$ を $C_2\oplus y_1 = 2\oplus 3 = 1$ で置き換えます。</p>
 <p>$2$ 回目のクエリで、 $C_3$ を $C_3\oplus y_2 = 3\oplus 4 = 7$ で置き換えます。</p>
 <p>$3$ 回目のクエリで、 頂点 $1$ を根とする部分木のコストの総 xor $C_1\oplus C_2 \oplus C_3=1\oplus 1\oplus 7 =7 $ となるので、 $7$ を出力します。</p>
@@ -84,18 +87,18 @@ $T_Q$ $x_Q$ $y_Q$
 <h5 class="underline">サンプル2</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>6 3
-1 2 3 4 5 6
-1 2
-1 3
-2 4
-2 6
-4 5
-1 6 6
-1 4 4
-2 2 0</pre>
+<p>6 3</p>
+<p>1 2 3 4 5 6</p>
+<p>1 2</p>
+<p>1 3</p>
+<p>2 4</p>
+<p>2 6</p>
+<p>4 5</p>
+<p>1 6 6</p>
+<p>1 4 4</p>
+<p>2 2 0</p>
 <h6>出力</h6>
-<pre>7</pre>
+<p>7</p>
 <p>
 </p>
 </div>
@@ -104,13 +107,13 @@ $T_Q$ $x_Q$ $y_Q$
 <h5 class="underline">サンプル3</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>2 1
-1 2
-1 2
-2 2 0
-</pre>
+<p>2 1</p>
+<p>1 2</p>
+<p>1 2</p>
+<p>2 2 0</p>
+<p></p>
 <h6>出力</h6>
-<pre>2</pre>
+<p>2</p>
 <p>
 </p>
 </div>

@@ -1,3 +1,6 @@
+<script>
+MathJax={chtml:{matchFontHeight: false},tex:{inlineMath: [['$', '$']]}};</script>
+<script id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <h3>No.1703  Much Matching</h3>
 <div class="block">
 <h4 class="shadow">問題文</h4>
@@ -14,11 +17,11 @@
 </div>
 <div class="block">
 <h4 class="shadow">入力</h4>
-<pre>$N\ M\ Q$
-$a_1\ b_1$
-$\vdots$
-$a_Q\ b_Q$
-</pre>
+<p>$N\ M\ Q$</p>
+<p>$a_1\ b_1$</p>
+<p>$\vdots$</p>
+<p>$a_Q\ b_Q$</p>
+<p></p>
 <ul>
 <li><p>$1$ 行目は $N$,$M$,$Q$ が空白区切りで与えられる</p></li>
 <li><p>$2\sim Q+1$ 行目は $a_i$,$b_i$ が空白区切りで与えられる</p></li>
@@ -50,10 +53,10 @@ $a_Q\ b_Q$
 <h5 class="underline">サンプル1</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>1 1 1
-1 1</pre>
+<p>1 1 1</p>
+<p>1 1</p>
 <h6>出力</h6>
-<pre>1</pre>
+<p>1</p>
 <p>1人ずつしかいないです。この王国は大丈夫でしょうか。</p>
 </div>
 </div>
@@ -61,11 +64,11 @@ $a_Q\ b_Q$
 <h5 class="underline">サンプル2</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>3 3 2
-1 2
-2 3</pre>
+<p>3 3 2</p>
+<p>1 2</p>
+<p>2 3</p>
 <h6>出力</h6>
-<pre>2</pre>
+<p>2</p>
 <p>$C=((1,2),(2,3))$ です。</p>
 </div>
 </div>
@@ -73,12 +76,12 @@ $a_Q\ b_Q$
 <h5 class="underline">サンプル3</h5>
 <div class="paragraph">
 <h6>入力</h6>
-<pre>3 3 3
-1 2
-2 3
-3 1</pre>
+<p>3 3 3</p>
+<p>1 2</p>
+<p>2 3</p>
+<p>3 1</p>
 <h6>出力</h6>
-<pre>2</pre>
+<p>2</p>
 <p>$C=((1,2),(2,3))$ です。</p>
 <p>3つ目の条件より $C=((1,2),(2,3),(3,1))$ にできないことに注意してください。</p>
 </div>

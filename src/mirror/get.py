@@ -12,9 +12,23 @@ def update_and_save(url):
   filename=str(title.text).replace(" ","_").replace(".","-")+".html"
 
   with open(filename,mode="w",encoding="utf-8") as f:
+    f.write("<script>\nMathJax={chtml:{matchFontHeight: false},tex:{inlineMath: [['$', '$']]}};</script>\n<script id=\"MathJax-script\" async  src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js\"></script>\n")
     f.write(str(title)+"\n")
+    flag=False
     for i in elems:
-      f.write(str(i)+"\n")
+      lines=str(i).split("\n")
+      for line in lines:
+        tmp=line
+        if "<pre>" in tmp:
+          tmp=tmp.replace("<pre>","<p>")
+          flag=True
+        if "</pre>" in tmp:
+          tmp=tmp.replace("</pre>","</p>")
+          flag=False
+        if flag:
+          f.write(tmp+"</p>\n<p>")
+        else:
+          f.write(tmp+"\n")
     f.write("<p>source: <a href=\""+url+"\">"+str(title.text)+"</a></p>\n")
   return filename,str(title.text)
 
