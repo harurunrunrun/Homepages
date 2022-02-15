@@ -1,7 +1,14 @@
 import requests
 from bs4 import BeautifulSoup
+import time
+import datetime
+
+def get_date():
+  dt_now=datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+  return str(dt_now.year)+"/"+str(dt_now.month)+"/"+str(dt_now.day)+"  "+str(dt_now.hour)+":"+str(dt_now.minute)+":"+str(dt_now.second)
 
 def update_and_save(url):
+  date=get_date()
   r=requests.get(url)
   soup=BeautifulSoup(r.text,"html.parser")
 
@@ -30,6 +37,7 @@ def update_and_save(url):
         else:
           f.write(tmp+"\n")
     f.write("<p>source: <a href=\""+url+"\">"+str(title.text)+"</a></p>\n")
+    f.write("<p>最終更新日: "+date+"</p>\n")
   return filename,str(title.text)
 
 
@@ -51,7 +59,10 @@ def get_urls():
     tmp=str(link.get("href"))
     if "/problems/no/" in tmp:
       url="https://yukicoder.me"+tmp
+      start=time.time()
       filename,title=update_and_save(url)
+      end=time.time()
+      time.sleep(1-min(1,end-start))
       files.append([filename,title])
   make_mirror(files)
   return
