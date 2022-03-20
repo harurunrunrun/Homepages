@@ -1,3 +1,4 @@
+<meta charset="utf-8"/>
 <!--markdown preview等を入れると見れるはずです-->
 
 # グラフ
