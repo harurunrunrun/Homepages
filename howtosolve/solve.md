@@ -1,6 +1,6 @@
 <meta charset="utf-8"/>
 <!--markdown preview等を入れると見れるはずです-->
-<!--if this page has garbled characters,　please use text encoding.-->
+<!--if this page has garbled characters, please use text encoding.-->
 
 # グラフ
   
