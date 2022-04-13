@@ -1,5 +1,7 @@
 <!--markdown preview等を入れるとmarkdownで見れるはずです-->
 
+<!--html version: https://harurunrunrun.github.io/Homepages/PR/main.html -->
+
 # 競技プログラミングで強くなるには
 
 以下の内容は競技プログラミング未経験からAtCoder緑くらいまでの人向けです。
@@ -120,6 +122,26 @@ AtCoderでは強さによってレーティングが付きます。
 
     割といい感じの難易度の問題に出会えます。
 
+## ユーザスクリプト
+
+ユーザスクリプトを入れると便利になります。
+
+- [AtCoder Easy Test](https://greasyfork.org/ja/scripts/433152-atcoder-easy-test-v2)
+
+  サンプルを自動で確認してくれるスクリプト。WandboxのAPIがサイレント終了したため設定をAtCoder等にしないと動かない。
+
+  便利すぎるので必須。
+
+- [AtCoderResultNotifier](https://greasyfork.org/ja/scripts/371225-atcoderresultnotifier)
+
+  結果を通知してくれるスクリプト。コンテスト中に活躍する。
+
+- [ac predictor](https://greasyfork.org/ja/scripts/369954-ac-predictor)
+  
+  コンテスト中に予測パフォーマンスが出ます。
+
+上記以外のスクリプトは[こちら](https://kato-hiro.github.io/AtCoderClans/scripts#gsc.tab=0)から見てください。
+
 ## AtCoder以外のサイト
 
 - [yukicoder](https://yukicoder.me/)
@@ -134,6 +156,10 @@ AtCoderでは強さによってレーティングが付きます。
 
   ICPCの問題とかもここにある。
 
+- [アルゴ式](https://algo-method.com/)
+
+  基本的な問題から応用問題まであり、詳しい解説がある。
+
 - [codeforces](https://codeforces.com/)
 
   英語です。開催頻度が高い上にレートの変動値が大きいです。
@@ -147,6 +173,13 @@ AtCoderでは強さによってレーティングが付きます。
 - [Code Chef](https://www.codechef.com/)
 
   通称インド。
+
+- [ICPC](https://icpc.iisf.or.jp/)
+
+  国際大学対抗プログラミングコンテスト
+
+  今年(2022年)の国内予選は 6,7月あたりに開催予定。3人1チーム。大学生の方はぜひ。
+
 
 他にも調べれば色々とあります。(POJとか)
 
