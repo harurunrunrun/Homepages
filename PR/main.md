@@ -1,4 +1,4 @@
-<!--markdown preview等を入れると見れるはずです-->
+<!--markdown preview等を入れるとmarkdownで見れるはずです-->
 
 # 競技プログラミングで強くなるには
 
