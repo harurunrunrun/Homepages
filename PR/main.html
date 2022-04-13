@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>main.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<!--markdown preview等を入れるとmarkdownで見れるはずです-->
+<!--html version: https://harurunrunrun.github.io/Homepages/PR/main.html -->
+<h1 id="%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A7%E5%BC%B7%E3%81%8F%E3%81%AA%E3%82%8B%E3%81%AB%E3%81%AF">競技プログラミングで強くなるには</h1>
+<p>以下の内容は競技プログラミング未経験からAtCoder緑くらいまでの人向けです。</p>
+<p>より詳しく知りたい人は <a href="https://kato-hiro.github.io/AtCoderClans/#gsc.tab=0">AtCoder Clans</a>
+を読んでください。全部載ってます。</p>
+<h2 id="%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%A3%E3%81%A6%E4%BD%95">競技プログラミングって何？</h2>
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=WGNQrH0AV2k">テレ東の動画</a></p>
+</li>
+<li>
+<p><s>要するに数学</s></p>
+</li>
+</ul>
+<h2 id="atcoder%E3%81%A3%E3%81%A6%E4%BD%95">AtCoderって何？</h2>
+<p>日本で一番大きな競技プログラミングサイトです。</p>
+<p>高橋直大 (通称:chokudai) さんという方が運営しています。</p>
+<h3 id="%E8%89%B2">色</h3>
+<p>AtCoderでは強さによってレーティングが付きます。</p>
+<p><a href="https://chokudai.hatenablog.com/entry/2019/02/11/155904">色についての詳しい解説</a></p>
+<p>下からレート400ごとに灰、茶、緑、水、青、黄、橙、赤になります。</p>
+<p><b>なお、リセマラ防止のため最初の10数回は実力より低いレートが付きます。</b></p>
+<p>また、灰色だけは -2000から400を 0から400の間に圧縮して表示しているようです。つまり、最初のうちはレートが上がり辛いです。</p>
+<p>詳しくは <a href="https://magurofly.blogspot.com/2020/10/atcodertourist.html">こちら</a></p>
+<h3 id="%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88">コンテスト</h3>
+<p><a href="https://atcoder.jp/contests/">コンテスト一覧</a></p>
+<p>予定されたコンテストからいつコンテストがあるかを知ることができます。</p>
+<ul>
+<li>
+<p>AtCoder Beginner Contest (通称: ABC, 青アイコン)</p>
+<p>レート0~1999がRated対象  初心者向けのコンテスト(という位置付けだが実際は難しい問題が普通に出てくる)</p>
+</li>
+<li>
+<p>AtCoder Regular Contest (通称: ARC, 橙アイコン)</p>
+<p>レート0~2799がRated対象 中級者向け ABCよりも考察を必要とする問題が多い</p>
+</li>
+<li>
+<p>AtCoder Grand Contest (通称: AGC, 赤アイコン)</p>
+<p>レート1200~9999がRated対象 上級者向け 天才以外お断りコンテストとも言う 最近は滅多に開催されない</p>
+</li>
+<li>
+<p>AtCoder Heuristic Contest (通称: AHC, 赤アイコン？黒？)</p>
+<p>ヒューリスティックのコンテスト。アルゴリズムのレートとは別にヒューリスティックのレートが変動する。短期間の開催と長期間の開催がある。ヒューリスティックのレートは単調増加。</p>
+</li>
+</ul>
+<p>コンテスト参加方法などは <a href="https://qiita.com/snaruse0608/items/9ef0f2f5b190f142cb80">こちら</a>  の記事を参考にしてください。</p>
+<p>*注: 上記の記事は古いため載っていませんが、コンテスト参加登録ボタンを押した後に、Rated登録ボタンを押さないとレートが変動しません。逆に、Unrated登録ボタンを押すとレート変動を気にせず気軽に参加することができます。Rated/Unratedの変更はコンテスト開始前なら参加登録を取り消してもう一度登録し直すと再選択できます。コンテスト開始後は変更できません。</p>
+<h3 id="%E5%BC%B7%E3%81%8F%E3%81%AA%E3%82%8B%E3%81%AB%E3%81%AF">強くなるには</h3>
+<p>過去問を解きましょう。</p>
+<ul>
+<li>
+<p><a href="https://atcoder.jp/contests/abs">AtCoder Beginners Selection</a></p>
+<p>AtCoderに登録したら解くべき問題</p>
+</li>
+<li>
+<p><a href="https://atcoder.jp/contests/typical90">競プロ典型 90問</a></p>
+<p>難易度順に並んでいないため注意。★2が灰色、★3が緑、★4が水色レベルと言った感じなので、低いものから取り組むと良い。</p>
+<p>トップページに色々と書いてある。</p>
+</li>
+<li>
+<p><a href="https://kenkoooo.com/atcoder/#/table/">AtCoder Problems</a></p>
+<p>AtCoderのすべての過去問が載っている。有志サイト。</p>
+<ul>
+<li>
+<p><a href="https://kenkoooo.com/atcoder/#/training/Boot%20camp%20for%20Beginners">Boot camp for Beginners</a></p>
+<p>まずはEasyを埋めることから。</p>
+</li>
+<li>
+<p><a href="https://kenkoooo.com/atcoder/#/contest/recent">Virtual Contest</a></p>
+<p>誰かが建てたバーチャルコンテスト(通称: バチャ)に参加することができる。
+バーチャルコンテストとは、実際のコンテストのように問題を解くことができます。</p>
+<p>定期開催されているバチャ</p>
+<ul>
+<li>
+<p><a href="https://www.terry-u16.net/entry/kujikatsu-contest">くじかつ</a></p>
+<p>2022/1/5をもって終了した。21:00~22:40。 TERRYさんが自動で建てていたコンテスト。</p>
+</li>
+<li>
+<p>あさかつ</p>
+<p>毎朝7:30~8:30</p>
+</li>
+<li>
+<p>もすーんバチャ</p>
+<p>不定期開催。30分で7問という鬼畜構成。個人的な印象として良く参加している人は強くなっている。</p>
+<p>一応通知用Twitterがある <a href="https://twitter.com/Mosoon_V">もすーんバチャ通知</a> が、開始5分前とかに通知されるので参加できるかは運次第。</p>
+</li>
+<li>
+<p>HScon</p>
+<p>毎週木曜 21:00~22:00 (曜日が火曜から木曜に変更になったらしいです)</p>
+<p>某学科某研究室のバチャだがけっこう色々な人が参加している。</p>
+</li>
+</ul>
+<p>*注: Lockoutと書いてあるバチャは恐らくPrivateのし忘れだと思われるので、特記がない場合は参加しないようにしましょう。</p>
+</li>
+<li>
+<p>Recommendation</p>
+<p>ログインした状態で、</p>
+<p>https://kenkoooo.com/atcoder/#/table/ -&gt; Userのボタンを押す -&gt; Recommendation</p>
+<p>割といい感じの難易度の問題に出会えます。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88">ユーザスクリプト</h2>
+<p>ユーザスクリプトを入れると便利になります。</p>
+<ul>
+<li>
+<p><a href="https://greasyfork.org/ja/scripts/433152-atcoder-easy-test-v2">AtCoder Easy Test</a></p>
+<p>サンプルを自動で確認してくれるスクリプト。WandboxのAPIがサイレント終了したため設定をAtCoder等にしないと動かない。</p>
+<p>便利すぎるので必須。</p>
+</li>
+<li>
+<p><a href="https://greasyfork.org/ja/scripts/371225-atcoderresultnotifier">AtCoderResultNotifier</a></p>
+<p>結果を通知してくれるスクリプト。コンテスト中に活躍する。</p>
+</li>
+<li>
+<p><a href="https://greasyfork.org/ja/scripts/369954-ac-predictor">ac predictor</a></p>
+<p>コンテスト中に予測パフォーマンスが出ます。</p>
+</li>
+</ul>
+<p>上記以外のスクリプトは<a href="https://kato-hiro.github.io/AtCoderClans/scripts#gsc.tab=0">こちら</a>から見てください。</p>
+<h2 id="atcoder%E4%BB%A5%E5%A4%96%E3%81%AE%E3%82%B5%E3%82%A4%E3%83%88">AtCoder以外のサイト</h2>
+<ul>
+<li>
+<p><a href="https://yukicoder.me/">yukicoder</a></p>
+<p>有志によって運営されているコンテストサイト。</p>
+<p>毎週金曜日開催。</p>
+</li>
+<li>
+<p><a href="https://onlinejudge.u-aizu.ac.jp/home">Aizu Online Judge</a></p>
+<p>コースに基本的な問題がたくさんある。AtCoderができる前は日本ではこのサイトが主流だったらしい。</p>
+<p>ICPCの問題とかもここにある。</p>
+</li>
+<li>
+<p><a href="https://algo-method.com/">アルゴ式</a></p>
+<p>基本的な問題から応用問題まであり、詳しい解説がある。</p>
+</li>
+<li>
+<p><a href="https://codeforces.com/">codeforces</a></p>
+<p>英語です。開催頻度が高い上にレートの変動値が大きいです。</p>
+</li>
+<li>
+<p><a href="https://www.topcoder.com/">Top Coder</a></p>
+<p>英語です。この記事を書いてる人は詳しく知りません。</p>
+<p>参考: <a href="https://qiita.com/recuraki/items/a359624c2981e82853d5">TopCoderをはじめよう！(2021年版)</a></p>
+</li>
+<li>
+<p><a href="https://www.codechef.com/">Code Chef</a></p>
+<p>通称インド。</p>
+</li>
+<li>
+<p><a href="https://icpc.iisf.or.jp/">ICPC</a></p>
+<p>国際大学対抗プログラミングコンテスト</p>
+<p>今年(2022年)の国内予選は 6,7月あたりに開催予定。3人1チーム。大学生の方はぜひ。</p>
+</li>
+</ul>
+<p>他にも調べれば色々とあります。(POJとか)</p>
+<h2 id="%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E4%BB%A5%E5%A4%96%E3%81%AE%E9%A1%9E%E4%BC%BC%E3%82%B3%E3%83%B3%E3%83%86%E3%82%B9%E3%83%88">プログラミング以外の類似コンテスト</h2>
+<ul>
+<li>
+<p><a href="https://onlinemathcontest.com/">Math Online Contest</a></p>
+<p>初期は外部ツール可だったのでプログラミングの練習になったが、今は厳しくなりサイトにある電卓しか使えない。数学に自身がある方はどうぞ。</p>
+</li>
+</ul>
+<h2 id="%E5%8F%82%E8%80%83%E6%9B%B8%E3%81%AA%E3%81%A9">参考書など</h2>
+<ul>
+<li>
+<p>プログラミングコンテストチャレンジブック</p>
+<p>通称 蟻本。基本的なアルゴリズムやデータ構造が載っている。ほとんどの競プロerは持っていると思われる。</p>
+</li>
+<li>
+<p>問題解決力を鍛える!アルゴリズムとデータ構造</p>
+<p>通称 けんちょん本。アルゴリズムに重点を置き、解説している。</p>
+</li>
+<li>
+<p>問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本</p>
+<p>通称 E8本。フルカラーでわかりやすい。数学に重点を置き、基礎のキから解説している。AtCoderに常設のジャッジシステムがある。</p>
+<p><a href="https://www.youtube.com/watch?v=TqmcWg1aeZc">テレ東の参考動画</a></p>
+</li>
+<li>
+<p>アルゴリズム実技検定 公式テキスト[エントリー~中級編]</p>
+<p>通称 PAST本。Pythonで解説している。(競技プログラミングの参考書は基本的にC++)</p>
+</li>
+</ul>
+<p>上記以外にも色々あります。他は<a href="https://kato-hiro.github.io/AtCoderClans/media#%E6%9B%B8%E7%B1%8D">こちら</a>から見てみてください。</p>
+
+</body>
+</html>
